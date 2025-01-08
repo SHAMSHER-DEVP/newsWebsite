@@ -20,7 +20,7 @@ function Newsitems() {
                         <Col key={ind} sm={10} md={5} lg={4} xl={3} className="my-4">
             <Card style={{ width: '18rem ' }} className="position-relative">
       <Card.Img variant="top" src={el.urlToImage?el.urlToImage:'https://plus.unsplash.com/premium_photo-1688561383203-31fed3d85417?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}   height={180} />
-        <p className="position-absolute bg-danger text-light rounded rounded-3">{el.source.name}</p>
+        <p className="position-absolute bg-danger text-light rounded rounded-sm p-1">{el.source.name}</p>
       <Card.Body>
         <Card.Title> {el.title.slice(0,20)} </Card.Title>
         <Card.Text>
