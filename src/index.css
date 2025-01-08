@@ -1,0 +1,13 @@
+.offcanvas-body {
+    background-color: #f8f9fa;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #ffffff !important;
+  }
+  .navbar-dark .navbar-toggler-icon {
+    background-color: #ffffff;
+  }
+  .act{
+    color: orange;
+  }
+  
