@@ -6,7 +6,7 @@ import { Cnt } from './context';
 function Newsitems() {
   let {dt}=useContext(Cnt);
   let {articles} = dt;
-    let date=new Date();
+    // let date=new Date();
     
   
   return (
@@ -38,6 +38,7 @@ function Newsitems() {
 
         </Row>
      </Container>
+     
     </>
   )
 }

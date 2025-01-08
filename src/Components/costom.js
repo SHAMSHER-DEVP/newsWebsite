@@ -40,6 +40,36 @@ function UseCustom(){
     
         
     }
+    let fetchData=async ()=>{
+      
+      try {
+        // setDt({...dt,loading:true});
+        console.log('the fetchData has called');
+        setDt((prv)=>{
+          return{
+            ...prv,
+            loading:true
+          }
+        })
+        console.log('the getData ,  category is = ',dt.category);
+        let rsp=await ax.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=0ffbae641b184eddadfb7197e421978c&category=${dt.category}&page=${dt.page}&pageSize=${dt.pageSize}`);
+        let data= await rsp.data;
+         
+         setDt({
+           ...dt,
+           articles:dt.articles.concat(data.articles),
+           totalResults:data.totalResults,
+          loading:false,
+          page:dt.page+=1,
+         }); 
+         getData();
+
+      } catch (error) {
+          console.log('the error is = ',error.message); 
+      }
+           
+
+    }
     
     let nexthandleClick=(e)=>{
       // e.preventDefault();
@@ -86,7 +116,7 @@ function UseCustom(){
     },[dt.page, dt.category, dt.pageSize]);  
     // },[]);
    
-     return {dt,nexthandleClick,prvhandleClick,handleCategory};
+     return {dt,fetchData,nexthandleClick,prvhandleClick,handleCategory};
 
 }
 
